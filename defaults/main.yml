@@ -1,3 +1,3 @@
 ---
-conda_env_conda_dir: /opt/anaconda
+conda_env_conda_dir: /usr/local/anaconda
 conda_env_escalate: True

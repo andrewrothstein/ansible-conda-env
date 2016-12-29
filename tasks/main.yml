@@ -10,6 +10,7 @@
 - name: inject the environment.yml
   become: '{{conda_env_escalate}}'
   become_user: root
+  when: conda_env_environment is defined
   copy: >-
     src={{conda_env_environment}}
     dest={{conda_env_env_ymls}}/{{conda_env_environment}}
@@ -18,6 +19,6 @@
 - name: create the conda environment
   become: '{{conda_env_escalate}}'
   become_user: root
-  command: '{{conda_env_bin_dir}}/conda env create -f={{conda_env_env_ymls}}/{{conda_env_environment}} -q -n {{conda_env_name}} python={{conda_env_python}}'
+  command: '{{conda_env_bin_dir}}/conda env create {% if conda_env_environment is defined %}-f={{conda_env_env_ymls}}/{{conda_env_environment}}{% endif %} -q -n {{conda_env_name}} python={{conda_env_python}}'
   args:
     creates: '{{conda_env_conda_dir}}/envs/{{conda_env_name}}'
