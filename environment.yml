@@ -1,6 +1,0 @@
----
-#ansible-conda-env/environment.yml
-dependencies:
-- cryptography
-- pip:
-  - ansible
