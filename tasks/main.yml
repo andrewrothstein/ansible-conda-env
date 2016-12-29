@@ -13,7 +13,7 @@
   when: conda_env_environment is defined
   copy: >-
     src={{conda_env_environment}}
-    dest={{conda_env_fq_dest_settings}}
+    dest={{conda_env_fq_dest_environment}}
     mode=0644
 
 - name: create the conda environment
