@@ -5,6 +5,5 @@
       anaconda_make_sys_default: True
     - role: '{{playbook_dir}}'
       conda_env_name: conda-test
-      conda_env_python: 2.7
       conda_env_environment: conda-test-environment.yml
       

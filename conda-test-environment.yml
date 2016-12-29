@@ -1,5 +1,6 @@
 ---
+channels:
+  - conda-forge
 dependencies:
-- cryptography
-- pip:
-  - ansible
+  - python=2.7
+  - tensorflow
