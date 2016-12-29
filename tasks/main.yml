@@ -7,10 +7,9 @@
     state=directory
     mode=0755
     
-- name: inject the environment.yml
+- name: injecting {{conda_env_environemt}} as {{conda_env_fq_dest_environment}}...
   become: '{{conda_env_escalate}}'
   become_user: root
-  when: conda_env_environment is defined
   copy: >-
     src={{conda_env_environment}}
     dest={{conda_env_fq_dest_environment}}
