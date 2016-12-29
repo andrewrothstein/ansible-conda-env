@@ -6,8 +6,11 @@
     path={{conda_env_env_ymls}}
     state=directory
     mode=0755
+
+- debug:
+    msg: 'injecting {{conda_env_environment}} as {{conda_env_fq_dest_environment}}...'
     
-- name: injecting {{conda_env_environemt}} as {{conda_env_fq_dest_environment}}...
+- name: injecting...
   become: '{{conda_env_escalate}}'
   become_user: root
   copy: >-
