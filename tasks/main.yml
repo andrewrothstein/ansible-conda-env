@@ -19,7 +19,7 @@
 - name: create the conda environment
   become: '{{conda_env_escalate}}'
   become_user: root
-  command: '{{conda_env_bin_dir}}/conda create {% if conda_env_environment is defined %}--file={{conda_env_fq_dest_settings}}{% endif %} -q -n {{conda_env_name}} python={{conda_env_python}}'
+  command: '{{conda_env_bin_dir}}/conda env create -f={{conda_env_fq_dest_environment}} -q -n {{conda_env_name}} python={{conda_env_python}}'
   args:
     creates: '{{conda_env_conda_dir}}/envs/{{conda_env_name}}'
 

@@ -27,7 +27,7 @@ Example Playbook
     - role: andrewrothstein.conda-env
 	  conda_env_name: ansible
 	  conda_env_python: 2.7
-	  conda_env_environment: ansible-environment.yml
+	  conda_env_environment: environment.yml
 ```
 
 License
