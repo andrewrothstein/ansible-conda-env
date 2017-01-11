@@ -6,4 +6,5 @@
     - role: '{{playbook_dir}}'
       conda_env_name: conda-test
       conda_env_environment: conda-test-environment.yml
+      conda_env_cleanup: True
       
