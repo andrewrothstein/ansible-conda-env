@@ -27,3 +27,9 @@
   become_user: root
   when: conda_env_addl_pkgs is defined
   command: '{{conda_env_bin_dir}}/conda install -n {{conda_env_name}} {{conda_env_addl_pkgs | default([]) | join(" ")}}'
+
+- name: cleanup
+  become: '{{conda_env_escalate}}'
+  become_user: root
+  when: conda_env_cleanup
+  command: '{{conda_env_bin_dir}}/conda clean -tipsy'

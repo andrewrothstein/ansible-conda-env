@@ -1,6 +1,6 @@
 ---
 conda_env_conda_dir: /usr/local/anaconda
 conda_env_escalate: True
-
+conda_env_cleanup: False
 # the environment.yml file is found via lookup by the copy module
 #conda_env_environment: environment.yml
