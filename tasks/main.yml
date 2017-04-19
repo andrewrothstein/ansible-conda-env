@@ -2,18 +2,18 @@
 - name: mkdir env-ymls
   become: '{{conda_env_escalate}}'
   become_user: root
-  file: >-
-    path={{conda_env_env_ymls}}
-    state=directory
-    mode=0755
+  file:
+    path: '{{conda_env_env_ymls}}'
+    state: directory
+    mode: 0755
 
 - name: injecting...
   become: '{{conda_env_escalate}}'
   become_user: root
-  copy: >-
-    src={{conda_env_environment}}
-    dest={{conda_env_fq_dest_environment}}
-    mode=0644
+  copy:
+    src: '{{conda_env_environment}}'
+    dest: '{{conda_env_fq_dest_environment}}'
+    mode: 0644
 
 - name: create the conda environment
   become: '{{conda_env_escalate}}'
