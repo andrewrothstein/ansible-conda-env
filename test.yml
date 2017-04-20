@@ -1,10 +1,6 @@
 ---
 - hosts: all
   roles:
-    - role: andrewrothstein.anaconda
-      anaconda_make_sys_default: True
-      anaconda_cleanup: True
-      anaconda_pkg_update: False
     - role: '{{playbook_dir}}'
       conda_env_name: conda-test
       conda_env_environment: conda-test-environment.yml
