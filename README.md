@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-conda-env.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-conda-env)
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-conda-env.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-conda-env)
 andrewrothstein.conda-env
 =========
 
