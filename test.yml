@@ -5,4 +5,6 @@
       conda_env_name: conda-test
       conda_env_environment: conda-test-environment.yml
       conda_env_cleanup: True
-      
+      conda_env_addl_pkgs:
+        - { c: conda-forge, p: nb_conda=2.2.0 }
+        - { p: jupyter }

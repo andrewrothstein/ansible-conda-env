@@ -4,3 +4,8 @@ conda_env_escalate: True
 conda_env_cleanup: False
 # the environment.yml file is found via lookup by the copy module
 #conda_env_environment: environment.yml
+
+# Additional packages to be installed, that are not specifed in environment.yml
+#conda_env_addl_pkgs:
+#  - { c: conda-forge, p: nb_conda=2.2.0 }
+#  - { p: jupyter }
