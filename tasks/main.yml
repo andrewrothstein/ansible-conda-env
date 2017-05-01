@@ -26,7 +26,7 @@
   become: '{{conda_env_escalate}}'
   become_user: root
   when: conda_env_addl_pkgs is defined
-  with_items: conda_env_addl_pkgs | default('[]')
+  with_items: '{{ conda_env_addl_pkgs | default([]) }}'
   command: '{{conda_env_bin_dir}}/conda install -n {{conda_env_name}} -c {{ item.c | default("defaults") }} {{ item.p }}'
 
 - name: cleanup
