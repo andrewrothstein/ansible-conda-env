@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-conda-env.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-conda-env)
 andrewrothstein.conda-env
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-conda-env.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-conda-env)
 
 A role to create a [Conda](http://conda.pydata.org/docs/index.html) environment.
 
@@ -27,7 +27,6 @@ Example Playbook
   roles:
     - role: andrewrothstein.conda-env
 	  conda_env_name: ansible
-	  conda_env_python: 2.7
 	  conda_env_environment: environment.yml
 ```
 
