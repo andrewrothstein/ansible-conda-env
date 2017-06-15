@@ -2,8 +2,8 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
-      conda_env_name: conda-test
-      conda_env_environment: conda-test-environment.yml
+      conda_env_name: ansible-conda-env-test
+      conda_env_environment: ansible-conda-env-test-environment.yml
       conda_env_cleanup: True
       conda_env_addl_pkgs:
         - c: conda-forge
