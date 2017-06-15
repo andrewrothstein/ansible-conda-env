@@ -7,10 +7,10 @@
     state: directory
     mode: 0755
 
-- name: injecting...
+- name: injecting/templatizing environment.yml...
   become: '{{conda_env_escalate}}'
   become_user: root
-  copy:
+  template:
     src: '{{conda_env_environment}}'
     dest: '{{conda_env_fq_dest_environment}}'
     mode: 0644
