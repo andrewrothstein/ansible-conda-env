@@ -34,3 +34,15 @@
   become_user: root
   when: conda_env_cleanup
   command: '{{conda_env_bin_dir}}/conda clean -tipsy'
+
+- name: setting up to activate in login shell...
+  become: '{{conda_env_escalate}}'
+  become_user: root
+  when: conda_env_escalate and conda_env_activate_for_login_shell
+  with_items:
+    - d: /etc/profile.d
+      f: conda-env-activate-{{conda_env_name}}.sh
+  template:
+    src: activate.sh.j2
+    dest: '{{item.d}}/{{item.f}}'
+    mode: '{{item.m|default("0644")}}'
