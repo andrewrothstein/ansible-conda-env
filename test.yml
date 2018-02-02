@@ -8,5 +8,5 @@
       conda_env_activate_for_login_shell: True
       conda_env_addl_pkgs:
         - c: conda-forge
-          p: nb_conda=2.2.1
+          p: boto3
         - p: jupyter
