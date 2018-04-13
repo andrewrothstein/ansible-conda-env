@@ -7,6 +7,8 @@ Creates a named [Conda](http://conda.pydata.org/docs/index.html) environment.
 Requirements
 ------------
 
+Assumes you have installed either Anaconda or Miniconda.
+
 See [meta/main.yml](meta/main.yml)
 
 Role Variables
