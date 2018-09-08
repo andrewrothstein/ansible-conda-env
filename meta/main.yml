@@ -24,7 +24,6 @@ galaxy_info:
     - python
     - anaconda
     - conda
-    - conda-env
 
 dependencies: []
   
