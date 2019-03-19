@@ -7,6 +7,9 @@ conda_env_cleanup: False
 # the environment.yml file is found via the template module
 #conda_env_environment: environment.yml
 
+# Update conda environment based on new environment.yml if environment is already present
+conda_env_update_if_present: False
+
 # Additional packages to be installed, that are not specifed in environment.yml
 #conda_env_addl_pkgs:
 #  - c: conda-forge
