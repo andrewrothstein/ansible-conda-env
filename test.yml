@@ -10,3 +10,8 @@
         - c: conda-forge
           p: boto3
         - p: jupyter
+    - role: '{{playbook_dir}}'
+      conda_env_name: ansible-conda-env-test
+      conda_env_environment: ansible-conda-env-test-updated-environment.yml
+      conda_env_cleanup: True
+      conda_env_update_if_present: True

@@ -15,12 +15,10 @@
     dest: '{{conda_env_fq_dest_environment}}'
     mode: 0644
 
-- name: create the conda environment
+- name: '{{conda_env_action_command}} the conda environment'
   become: '{{conda_env_escalate}}'
   become_user: root
-  command: '{{conda_env_bin_dir}}/conda env create -f={{conda_env_fq_dest_environment}} -q -n {{conda_env_name}}'
-  args:
-    creates: '{{conda_env_conda_dir}}/envs/{{conda_env_name}}'
+  command: '{{conda_env_bin_dir}}/conda env {{conda_env_action_command}} -f={{conda_env_fq_dest_environment}} -q -n {{conda_env_name}}'
 
 - name: addl packages...
   become: '{{conda_env_escalate}}'

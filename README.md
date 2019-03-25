@@ -28,8 +28,8 @@ Example Playbook
 - hosts: servers
   roles:
     - role: andrewrothstein.conda-env
-	  conda_env_name: my-environment
-	  conda_env_environment: my-environment.yml
+      conda_env_name: my-environment
+      conda_env_environment: my-environment.yml
 ```
 
 License
