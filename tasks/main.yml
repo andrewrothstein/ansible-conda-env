@@ -25,13 +25,13 @@
   become_user: root
   when: conda_env_addl_pkgs is defined
   with_items: '{{  conda_env_addl_pkgs | default([])  }}'
-  command: '{{ conda_env_bin_dir }}/conda install -n {{ conda_env_name }} -c {{  item.c | default("defaults")  }} {{  item.p  }}'
+  command: '{{ conda_env_bin_dir }}/conda install -n {{ conda_env_name }} -yq -c {{  item.c | default("defaults")  }} {{  item.p  }}'
 
 - name: cleanup
   become: '{{ conda_env_escalate }}'
   become_user: root
   when: conda_env_cleanup
-  command: '{{ conda_env_bin_dir }}/conda clean -tipsy'
+  command: '{{ conda_env_bin_dir }}/conda clean -tipsyq'
 
 - name: setting up to activate in login shell...
   become: '{{ conda_env_escalate }}'
