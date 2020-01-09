@@ -1,3 +1,9 @@
+- alpine_3.10
+- alpine_3.11
+- alpine_3.6
+- alpine_3.7
+- alpine_3.8
+- alpine_3.9
 - archlinux_latest
 - centos_7
 - centos_8
