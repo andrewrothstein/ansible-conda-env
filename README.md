@@ -7,7 +7,7 @@ Creates a named [Conda](http://conda.pydata.org/docs/index.html) environment.
 Requirements
 ------------
 
-Assumes you have installed either Anaconda or Miniconda.
+Assumes you have installed either Anaconda or Miniconda. Please consider these roles [andrewrothstein.anaconda](https://github.com/andrewrothstein/ansible-anaconda) and [andrewrothstein.miniconda](https://github.com/andrewrothstein/ansible-miniconda) for your needs.
 
 See [meta/main.yml](meta/main.yml)
 
