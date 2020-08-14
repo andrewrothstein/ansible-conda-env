@@ -4,7 +4,8 @@
   register: conda_info
   changed_when: False
 
-- set_fact:
+- name: set conda_info fact
+  set_fact:
     conda_info: "{{ conda_info.stdout | from_json }}"
 
 - name: mkdir env-ymls
