@@ -8,7 +8,7 @@
   set_fact:
     conda_info: "{{ conda_info.stdout | from_json }}"
 
-- name: mkdir env-ymls
+- name: mkdir {{ conda_env_env_ymls }}
   become: '{{ conda_env_escalate }}'
   become_user: root
   file:
@@ -16,7 +16,7 @@
     state: directory
     mode: 0755
 
-- name: injecting/templatizing environment.yml...
+- name: injecting/templatizing {{ conda_env_fq_dest_environment }}...
   become: '{{ conda_env_escalate }}'
   become_user: root
   template:
@@ -40,7 +40,7 @@
   with_items: '{{  conda_env_addl_pkgs | default([])  }}'
   command: '{{ conda_env_bin_dir }}/conda install -n {{ conda_env_name }} -yq -c {{  item.c | default("defaults")  }} {{  item.p  }}'
 
-- name: cleanup
+- name: '{{ conda_env_bin_dir }}/conda clean -tipsyq'
   become: '{{ conda_env_escalate }}'
   become_user: root
   when: conda_env_cleanup
