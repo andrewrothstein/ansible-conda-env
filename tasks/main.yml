@@ -46,14 +46,25 @@
   when: conda_env_cleanup
   command: '{{ conda_env_bin_dir }}/conda clean -tipsyq'
 
-- name: setting up to activate in login shell...
+- block:
+    - name: Ansible delete file glob
+      find:
+        paths: /etc/profile.d/
+        patterns: conda-env-activate*
+      register: files_to_delete
+    - name: Ansible remove file glob
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ files_to_delete.files }}"
+    - name: setting up to activate in login shell...
+      with_items:
+        - d: /etc/profile.d
+          f: conda-env-activate-{{ conda_env_name }}.sh
+      template:
+        src: activate.sh.j2
+        dest: '{{ item.d }}/{{ item.f }}'
+        mode: '{{ item.m|default("0644") }}'
   become: '{{ conda_env_escalate }}'
   become_user: root
   when: conda_env_escalate and conda_env_activate_for_login_shell
-  with_items:
-    - d: /etc/profile.d
-      f: conda-env-activate-{{ conda_env_name }}.sh
-  template:
-    src: activate.sh.j2
-    dest: '{{ item.d }}/{{ item.f }}'
-    mode: '{{ item.m|default("0644") }}'
