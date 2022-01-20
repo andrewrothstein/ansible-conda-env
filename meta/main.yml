@@ -15,24 +15,18 @@ galaxy_info:
         - all
     - name: Debian
       versions:
-        - buster
-        - stretch
+        - bullseye
     - name: EL
       versions:
-        - 7
         - 8
     - name: Fedora
       versions:
-        - 31
-        - 32
-    - name: Gentoo
-      versions:
-        - all
+        - 35
+        - 36
     - name: Ubuntu
       versions:
         - bionic
         - focal
-        - xenial
   galaxy_tags:
     - python
     - anaconda
