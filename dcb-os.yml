@@ -1,6 +1,5 @@
 ---
 - archlinux_latest
-- centos_8
 - debian_bullseye
 - fedora_35
 - fedora_36
