@@ -27,7 +27,7 @@
 - name: '{{ conda_env_action_command }} the conda environment'
   become: '{{ conda_env_escalate }}'
   become_user: root
-  command: '{{ conda_env_bin_dir }}/mamba env {{ conda_env_action_command }} -f={{ conda_env_fq_dest_environment }} -q -n {{ conda_env_name }}'
+  command: '{{ conda_env_conda_bin }} env {{ conda_env_action_command }} --file={{ conda_env_fq_dest_environment }} -q -n {{ conda_env_name }}'
   args:
     # pretend task creates nothing to always run when updating an environment. In general, the first directory
     # is where conda creates new environments.
@@ -38,13 +38,13 @@
   become_user: root
   when: conda_env_addl_pkgs is defined
   with_items: '{{  conda_env_addl_pkgs | default([])  }}'
-  command: '{{ conda_env_bin_dir }}/mamba install -n {{ conda_env_name }} -yq -c {{  item.c | default("defaults")  }} {{  item.p  }}'
+  command: '{{ conda_env_conda_bin }} install -n {{ conda_env_name }} -yq -c {{  item.c | default("defaults")  }} {{  item.p  }}'
 
-- name: '{{ conda_env_bin_dir }}/mamba clean -tipsyq'
+- name: '{{ conda_env_conda_bin }} clean -tipsyq'
   become: '{{ conda_env_escalate }}'
   become_user: root
   when: conda_env_cleanup
-  command: '{{ conda_env_bin_dir }}/mamba clean -tipsyq'
+  command: '{{ conda_env_conda_bin }} clean -tipsyq'
 
 - name: setting up to activate in login shell...
   become: '{{ conda_env_escalate }}'
