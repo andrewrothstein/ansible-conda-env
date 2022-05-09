@@ -1,12 +1,12 @@
 ---
 - name: gather conda info
-  command: "{{ conda_env_bin_dir }}/conda info --json"
+  command: '{{ conda_env_conda_bin }} info --json'
   register: conda_info
-  changed_when: False
+  changed_when: false
 
 - name: set conda_info fact
   set_fact:
-    conda_info: "{{ conda_info.stdout | from_json }}"
+    conda_info: '{{ conda_info.stdout | from_json }}'
 
 - name: mkdir {{ conda_env_env_ymls }}
   become: '{{ conda_env_escalate }}'
