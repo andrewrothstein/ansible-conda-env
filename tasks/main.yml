@@ -33,7 +33,7 @@
     # is where conda creates new environments.
     creates: "{% if conda_env_action_command == 'update' %}{% else %}{{ conda_info.envs_dirs | first }}/{{ conda_env_name }}{% endif %}"
     # assume the env_dirs is set by conda but allow the it to be overwritten by the user, useful for .venv dirs in projects
-    prefix_or_name: "{% if conda_env_prefix == None %}'-n {{ conda_env_name }}'{% else %}'-p {{conda_env_prefix}}'{% endif %}"
+    argv: "{% if conda_env_prefix == None %}'-n {{ conda_env_name }}'{% else %}'-p {{conda_env_prefix}}'{% endif %}"
 
 - name: addl packages...
   become: '{{ conda_env_escalate }}'

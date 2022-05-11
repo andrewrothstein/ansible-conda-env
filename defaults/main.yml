@@ -3,9 +3,9 @@ conda_env_conda_dir: /usr/local/anaconda
 conda_env_exe: conda
 conda_env_escalate: true
 conda_env_cleanup: false
-# Uncomment to use a prefix instead of name
-# conda_env_prefix:
- 
+# Leave blank to use name, otherwise uses prefix provided for install
+conda_env_prefix:
+
 #conda_env_name: my-fancy-environment
 # the environment.yml file is found via the template module
 #conda_env_environment: environment.yml
