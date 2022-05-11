@@ -1,1 +1,1 @@
-source {{ conda_env_conda_dir }}/bin/activate {{conda_env_name}}
+source {{ conda_env_conda_dir }}/bin/activate {% if conda_env_prefix == None %}{{ conda_env_name }}{% else %}{{conda_env_prefix}}{% endif %}
