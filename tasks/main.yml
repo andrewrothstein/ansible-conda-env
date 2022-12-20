@@ -32,7 +32,7 @@
     # pretend task creates nothing to always run when updating an environment. In general, the first directory
     # is where conda creates new environments.
     creates: "{% if conda_env_action_command == 'update' %}{% else %}{{ conda_info.envs_dirs | first }}/{{ conda_env_name }}{% endif %}"
-    
+
 - name: addl packages...
   become: '{{ conda_env_escalate }}'
   become_user: root

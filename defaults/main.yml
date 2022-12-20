@@ -6,18 +6,18 @@ conda_env_cleanup: false
 # Leave blank to use name, otherwise uses prefix provided for install
 conda_env_prefix:
 
-#conda_env_name: my-fancy-environment
-# the environment.yml file is found via the template module
-#conda_env_environment: environment.yml
+# conda_env_name: my-fancy-environment
+## the environment.yml file is found via the template module
+# conda_env_environment: environment.yml
 
 # Update conda environment based on new environment.yml if environment is already present
 conda_env_update_if_present: false
 
 # Additional packages to be installed, that are not specifed in environment.yml
-#conda_env_addl_pkgs:
-#  - c: conda-forge
-#    p: nb_conda=2.2.0
-#  - p: jupyter
+# conda_env_addl_pkgs:
+#   - c: conda-forge
+#     p: nb_conda=2.2.0
+#   - p: jupyter
 
 # should the login shell activate this conda env by default?
 conda_env_activate_for_login_shell: false
