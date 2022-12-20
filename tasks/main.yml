@@ -40,11 +40,11 @@
   with_items: '{{  conda_env_addl_pkgs | default([])  }}'
   command: '{{ conda_env_conda_bin }} install -n {{ conda_env_name }} -yq -c {{  item.c | default("defaults")  }} {{  item.p  }}'
 
-- name: '{{ conda_env_conda_bin }} clean -tipsyq'
+- name: '{{ conda_env_conda_bin }} clean -ayq'
   become: '{{ conda_env_escalate }}'
   become_user: root
   when: conda_env_cleanup
-  command: '{{ conda_env_conda_bin }} clean -tipsyq'
+  command: '{{ conda_env_conda_bin }} clean -ayq'
 
 - block:
     - name: Ansible delete file glob
